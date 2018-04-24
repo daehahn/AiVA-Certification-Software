@@ -25,6 +25,13 @@ echo "   ========================="
 echo ""
 echo ""
 
+#-------------------------------------------------------
+# add library path
+#-------------------------------------------------------
+echo "export LD_LIBRARY_PATH=/usr/local/lib" | tee -a ~/.bashrc
+echo "export VLC_PLUGIN_PATH=/usr/local/lib/pkgconfig" | tee -a ~/.bashrc
+source ~/.bashrc
+
 # Install dependencies
 echo "========== Update Aptitude ==========="
 sudo apt-get update
@@ -105,6 +112,14 @@ googlesamples-assistant-devicetool list --model
 git clone https://github.com/googlesamples/assistant-sdk-python
 cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
 cd new-project
+
+echo ""
+echo '============================='
+echo '*****************************'
+echo '========= Finished =========='
+echo '*****************************'
+echo '============================='
+echo ""
 
 echo "run Google Assistant"
 python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
