@@ -44,7 +44,7 @@ cd $NineSixBoardsLib_Loc
 git clone https://github.com/jackmitch/libsoc.git
 cd libsoc
 autoreconf -i
-./configure --enable-python2 --enable-board="dragonboard410c"
+./configure --enable-python=3 --enable-board="dragonboard410c"
 make && sudo make install
 sudo ldconfig
 
