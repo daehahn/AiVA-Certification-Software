@@ -75,7 +75,8 @@ cd $SphinxLib_Loc
 git clone https://github.com/roykang75/sphinxbase.git
 cd sphinxbase
 ./autogen.sh
-./configure --enable-fixed
+#./configure --enable-fixed
+./configure --enable-fixed --without-lapack
 make
 sudo make install
 
