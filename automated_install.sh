@@ -1,7 +1,5 @@
 #!/bin/bash
 
-check_credentials
-
 # Preconfigured variables
 OS=debian
 User=$(id -un)
