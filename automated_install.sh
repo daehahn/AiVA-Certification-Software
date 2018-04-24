@@ -55,8 +55,6 @@ make
 sudo make install
 sudo ldconfig
 
-exit 10
-
 echo "=================================================="
 echo "=================================================="
 echo "========== Getting the code for 96BoardsGPIO ==========="
