@@ -39,7 +39,12 @@ echo "========== Installing Libraries ==========="
 sudo apt-get install -y bison libasound2-dev swig python-dev
 sudo apt-get install -y autoconf libtool automake
 
+echo "=================================================="
+echo "=================================================="
 echo "========== Getting the code for libsoc ==========="
+echo "=================================================="
+echo "=================================================="
+
 cd $NineSixBoardsLib_Loc
 git clone https://github.com/jackmitch/libsoc.git
 cd libsoc
@@ -50,7 +55,13 @@ make
 sudo make install
 sudo ldconfig
 
+exit 10
+
+echo "=================================================="
+echo "=================================================="
 echo "========== Getting the code for 96BoardsGPIO ==========="
+echo "=================================================="
+echo "=================================================="
 cd $NineSixBoardsLib_Loc
 git clone https://github.com/roykang75/96BoardsGPIO.git
 cd 96BoardsGPIO
