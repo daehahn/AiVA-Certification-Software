@@ -1,0 +1,110 @@
+#!/bin/bash
+
+check_credentials
+
+# Preconfigured variables
+OS=debian
+User=$(id -un)
+Group=$(id -gn)
+Origin=$(pwd)
+NineSixBoardsLib_Loc=$Origin/96Boards
+SphinxLib_Loc=$Origin/cmuSphinx
+
+mkdir $NineSixBoardsLib_Loc
+mkdir $SphinxLib_Loc
+
+
+echo ""
+echo ""
+echo "==============================="
+echo "*******************************"
+echo " *** STARTING INSTALLATION ***"
+echo "  ** this may take a while **"
+echo "   *************************"
+echo "   ========================="
+echo ""
+echo ""
+
+# Install dependencies
+echo "========== Update Aptitude ==========="
+sudo apt-get update
+sudo apt-get upgrade -yq
+
+echo "========== Installing Libraries ==========="
+sudo apt-get install -y bison libasound2-dev swig python-dev
+sudo apt-get install -y autoconf libtool automake
+
+echo "========== Getting the code for libsoc ==========="
+cd $NineSixBoardsLib_Loc
+git clone https://github.com/jackmitch/libsoc.git
+cd libsoc
+autoreconf -i
+./configure --enable-python2 --enable-board="dragonboard410c"
+make && sudo make install
+sudo ldconfig
+
+echo "========== Getting the code for 96BoardsGPIO ==========="
+cd $NineSixBoardsLib_Loc
+git clone https://github.com/roykang75/96BoardsGPIO.git
+cd 96BoardsGPIO
+./autogen.sh
+./configure
+make && sudo make install
+sudo ldconfig
+
+echo "========== Getting the code for cmuSphinxbase ==========="
+cd $SphinxLib_Loc
+git clone https://github.com/roykang75/sphinxbase.git
+cd sphinxbase
+./autogen.sh
+./configure --enable-fixed
+make
+sudo make install
+
+echo "========== Getting the code for cmuPocketSphin AiVA DB410c ==========="
+cd $SphinxLib_Loc
+git clone https://github.com/roykang75/pocketsphinx-AiVA-DB410c.git
+
+cd pocketsphinx-AiVA-DB410c
+mkdir extlib
+cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.la ./extlib
+cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.so ./extlib
+
+cp ../../96Boards/libsoc/lib/.libs/libsoc.la ./extlib
+cp ../../96Boards/libsoc/lib/.libs/libsoc.so ./extlib
+
+./autogen.sh
+./configure
+make
+sudo make install
+
+cd $Origin
+
+
+echo "Install package dependencies"
+sudo apt-get -y install python3-dev python3-venv nano vim
+python3 -m venv env
+env/bin/python -m pip install --upgrade pip setuptools
+source env/bin/activate
+
+
+sudo apt-get install portaudio19-dev libffi-dev libssl-dev
+python -m pip install --upgrade google-auth-oauthlib[tool]
+
+echo "progress oAuth"
+google-oauthlib-tool --client-secrets ./client_secret_8624439277-crrm3499kcui4pkr7pgccda5pjc985a7.apps.googleusercontent.com.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
+
+
+echo "Install gRPC and download Google Assistant"
+python -m pip install grpcio grpcio-tools
+python -m pip install --upgrade google-assistant-sdk[samples]
+
+echo "regist device model"
+googlesamples-assistant-devicetool register-model --manufacturer "Assistant SDK developer" --product-name "Assistant SDK light" --type LIGHT --model roy-model
+googlesamples-assistant-devicetool list --model
+git clone https://github.com/googlesamples/assistant-sdk-python
+cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
+cd new-project
+
+echo "run Google Assistant"
+python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
