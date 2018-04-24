@@ -87,13 +87,13 @@ cd $Origin
 
 
 echo "Install package dependencies"
-sudo apt-get -y install python3-dev python3-venv nano vim
+sudo apt-get install -y python3-dev python3-venv nano vim
 python3 -m venv env
 env/bin/python -m pip install --upgrade pip setuptools
 source env/bin/activate
 
 
-sudo apt-get install portaudio19-dev libffi-dev libssl-dev
+sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 python -m pip install --upgrade google-auth-oauthlib[tool]
 
 echo "progress oAuth"
