@@ -111,7 +111,8 @@ googlesamples-assistant-devicetool register-model --manufacturer "Assistant SDK 
 googlesamples-assistant-devicetool list --model
 git clone https://github.com/googlesamples/assistant-sdk-python
 cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
-cd new-project
+
+chmod +x *.sh
 
 echo ""
 echo '============================='
@@ -121,5 +122,6 @@ echo '*****************************'
 echo '============================='
 echo ""
 
-echo "run Google Assistant"
-python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
+#cd new-project
+#echo "run Google Assistant"
+#python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
