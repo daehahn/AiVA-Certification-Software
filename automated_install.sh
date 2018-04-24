@@ -45,7 +45,8 @@ git clone https://github.com/jackmitch/libsoc.git
 cd libsoc
 autoreconf -i
 ./configure --enable-python=3 --enable-board="dragonboard410c"
-make && sudo make install
+make 
+sudo make install
 sudo ldconfig
 
 echo "========== Getting the code for 96BoardsGPIO ==========="
@@ -54,7 +55,8 @@ git clone https://github.com/roykang75/96BoardsGPIO.git
 cd 96BoardsGPIO
 ./autogen.sh
 ./configure
-make && sudo make install
+make 
+sudo make install
 sudo ldconfig
 
 echo "========== Getting the code for cmuSphinxbase ==========="
