@@ -55,11 +55,11 @@ make
 sudo make install
 sudo ldconfig
 
-echo "=================================================="
-echo "=================================================="
+echo "========================================================"
+echo "========================================================"
 echo "========== Getting the code for 96BoardsGPIO ==========="
-echo "=================================================="
-echo "=================================================="
+echo "========================================================"
+echo "========================================================"
 cd $NineSixBoardsLib_Loc
 git clone https://github.com/roykang75/96BoardsGPIO.git
 cd 96BoardsGPIO
@@ -69,6 +69,8 @@ make clean
 make
 sudo make install
 sudo ldconfig
+
+exit 0
 
 echo "========== Getting the code for cmuSphinxbase ==========="
 cd $SphinxLib_Loc
