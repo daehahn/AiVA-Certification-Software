@@ -55,7 +55,7 @@ echo "=================================================="
 echo "=================================================="
 
 cd $NineSixBoardsLib_Loc
-git clone https://github.com/jackmitch/libsoc.git
+git clone https://github.com/roykang75/libsoc.git
 cd libsoc
 autoreconf -i
 ./configure --enable-python=3 --enable-board="dragonboard410c"
