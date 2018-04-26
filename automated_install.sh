@@ -35,18 +35,19 @@ echo "========== Update Aptitude ==========="
 sudo apt-get update
 sudo apt-get upgrade -yq
 
-echo "========== Remove python2 and then installing python3 ==========="
-sudo apt-get install -y python3
+echo "========== Installing python3 ==========="
+sudo apt-get install -y python3 python3-dev python-dev python3-venv 
 sudo apt-get upgrade python3
+sudo apt-get install -y autoconf build-essential libtool libtool-bin pkg-config automake
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2
 sudo update-alternatives --config python
 
 echo "========== Installing Libraries ==========="
-sudo apt-get install -y python3-dev python3-venv nano vim
+sudo apt-get install -y nano vim
 sudo apt-get install -y bison libasound2-dev swig
-sudo apt-get install -y autoconf libtool automake
+
 
 echo "=================================================="
 echo "=================================================="
