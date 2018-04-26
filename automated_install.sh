@@ -35,6 +35,11 @@ echo "========== Update Aptitude ==========="
 sudo apt-get update
 sudo apt-get upgrade -yq
 
+echo "========== Remove python2 and then installing python3 ==========="
+apt purge python2.7-minimal
+sudo apt-get install -y python3
+sudo apt-get upgrade python3
+
 echo "========== Installing Libraries ==========="
 sudo apt-get install -y python3-dev python3-venv nano vim
 sudo apt-get install -y bison libasound2-dev swig
