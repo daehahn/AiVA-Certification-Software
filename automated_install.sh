@@ -78,8 +78,6 @@ make
 sudo make install
 sudo ldconfig
 
-exit 0
-
 echo "========== Getting the code for cmuSphinxbase ==========="
 cd $SphinxLib_Loc
 git clone https://github.com/roykang75/sphinxbase.git
