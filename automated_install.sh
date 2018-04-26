@@ -51,7 +51,6 @@ git clone https://github.com/jackmitch/libsoc.git
 cd libsoc
 autoreconf -i
 ./configure --enable-python=3 --enable-board="dragonboard410c"
-make clean
 make
 sudo make install
 sudo ldconfig
@@ -66,7 +65,6 @@ git clone https://github.com/roykang75/96BoardsGPIO.git
 cd 96BoardsGPIO
 ./autogen.sh
 ./configure
-make clean
 make
 sudo make install
 sudo ldconfig
