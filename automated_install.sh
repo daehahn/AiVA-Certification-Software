@@ -47,7 +47,7 @@ sudo update-alternatives --config python
 echo "========== Installing Libraries ==========="
 sudo apt-get install -y nano vim
 sudo apt-get install -y bison libasound2-dev swig
-
+sudo ldconfig
 
 echo "=================================================="
 echo "=================================================="
