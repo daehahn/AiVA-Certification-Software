@@ -36,7 +36,7 @@ sudo apt-get update
 sudo apt-get upgrade -yq
 
 echo "========== Remove python2 and then installing python3 ==========="
-apt purge python2.7-minimal
+sudo apt purge python2.7-minimal
 sudo apt-get install -y python3
 sudo apt-get upgrade python3
 
