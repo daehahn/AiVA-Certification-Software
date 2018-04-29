@@ -19,5 +19,6 @@ try:
 
             if len(response) > 0:
 	        print("<<<<<< receive: " + response)
+	    print("----------------------------")
 except KeyboardInterrupt:
 	ser.close()
