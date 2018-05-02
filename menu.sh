@@ -106,6 +106,7 @@ done
 
 
 if [ "$MenuNo" = "1" ]; then
+	python ./zigbee/client/pyserial_test.py &
 	source ./run_google_assistant_ko.sh
 fi
 if [ "$MenuNo" = "2" ]; then
