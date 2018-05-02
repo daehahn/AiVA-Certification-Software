@@ -12,14 +12,14 @@ $ ./automated_install.sh
 ```
 
 ### 수동 실행
-1. run_google_assistant.sh
-Google Assistant를 영어 모드로 실행합니다.
+1. run_google_assistant.sh  
+: Google Assistant를 영어 모드로 실행합니다.  
 
-2. run_google_assistant_ko.sh
-Google Assistant를 한국어 모드로 실행합니다.
+2. run_google_assistant_ko.sh  
+: Google Assistant를 한국어 모드로 실행합니다.  
 
-3. sound_hi_play.sh
-한국어로 "안녕" 소리를 무한 반복 재생합니다.
+3. sound_hi_play.sh  
+: 한국어로 "안녕" 소리를 무한 반복 재생합니다.  
 
-4. sound_pressure_play.sh
-음압 테스트를 위해 1Khz 사운드를 무한으로 반복 재생합니다.
+4. sound_pressure_play.sh  
+: 음압 테스트를 위해 1Khz 사운드를 무한으로 반복 재생합니다.  
