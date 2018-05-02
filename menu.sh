@@ -130,17 +130,17 @@ if [ "$MenuNo" = "5" ]; then
 fi
 if [ "$MenuNo" = "6" ]; then
 	if [ "$PLATFORM" == "pi" ]; then
-		source ./sound_hi_play.sh
+		source ./sound_pressure_play.sh
 	else
-		source ./sound_hi_play_db410.sh
+		source ./sound_pressure_play_db410.sh
 	fi		
 fi
 if [ "$MenuNo" = "7" ]; then
 	source ./sound_pressure_play.sh
 	if [ "$PLATFORM" == "pi" ]; then
-		source ./sound_pressure_play.sh
+		source ./sound_hi_play.sh
 	else
-		source ./sound_pressure_play_db410.sh
+		source ./sound_hi_play_db410.sh
 	fi			
 fi
 if [ "$MenuNo" = "8" ]; then
