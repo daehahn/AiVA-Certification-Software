@@ -1,6 +1,8 @@
 
 #!/bin/bash
 
+clear
+
 get_platform() {
   uname_str=`uname -a`
 
@@ -87,8 +89,10 @@ parse_user_input()
 echo "====== Select Menu ======"
 echo ""
 echo "1. Full Test"
-echo ""
-echo "2. Sound Pressure Test"
+echo "2. Run Google Assistant (Korean)"
+echo "3. Run Google Assistant (English)"
+echo "4. UART Communication"
+echo "5. Sound Pressure Test"
 echo ""
 echo "========================="
 
@@ -98,9 +102,19 @@ while [[ -z $MenuNo ]] ; do
 #    export SDK_CONFIG_PRODUCT_ID
 done
 
+
 if [ "$MenuNo" = "1" ]; then
-	source db410c.sh  
+	source run_google_assistant_ko.sh
 fi
 if [ "$MenuNo" = "2" ]; then
-	source db410c.sh  
+	source run_google_assistant_ko.sh
+fi
+if [ "$MenuNo" = "3" ]; then
+	source run_google_assistant.sh
+fi
+if [ "$MenuNo" = "4" ]; then
+	python ./zigbee/client/pyserial_test.py
+fi
+if [ "$MenuNo" = "5" ]; then
+	source sound_pressure_play.sh
 fi
