@@ -1,7 +1,7 @@
 import serial
 import time
 
-ser = serial.Serial("COM4", 9600)
+ser = serial.Serial("/dev/ttyUSB0", 9600)
 ser.close()
 ser.open()
 
@@ -14,4 +14,4 @@ try:
 		time.sleep(1)
 		ser.write(response)
 except KeyboardInterrupt:
-	ser.close()
+		ser.close()
