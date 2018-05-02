@@ -128,6 +128,8 @@ cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new
 
 chmod +x *.sh
 
+cp pushtotalk.py ./new-project/
+
 echo ""
 echo '============================='
 echo '*****************************'
