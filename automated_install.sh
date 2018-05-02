@@ -28,6 +28,7 @@ echo ""
 #-------------------------------------------------------
 echo "export LD_LIBRARY_PATH=/usr/local/lib" | tee -a ~/.bashrc
 echo "export VLC_PLUGIN_PATH=/usr/local/lib/pkgconfig" | tee -a ~/.bashrc
+echo "/home/linaro/workspace/AiVA-Cert-SW/menu.sh" | tee -a ~/.bashrc
 source ~/.bashrc
 
 # Install dependencies
