@@ -36,13 +36,9 @@ sudo apt-get update
 sudo apt-get upgrade -yq
 
 echo "========== Installing python3 ==========="
-sudo apt-get install -y python3 python3-dev python-dev python3-venv 
+sudo apt-get install -y python3 python3-dev python-dev python3-venv python-serial
 sudo apt-get upgrade python3
 sudo apt-get install -y autoconf build-essential libtool libtool-bin pkg-config automake libpcre3-dev
-
-#sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
-#sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2
-#sudo update-alternatives --config python
 
 echo "========== Installing Libraries ==========="
 sudo apt-get install -y nano vim
