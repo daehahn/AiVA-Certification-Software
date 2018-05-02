@@ -42,64 +42,63 @@ sudo apt-get install -y autoconf build-essential libtool libtool-bin pkg-config 
 
 echo "========== Installing Libraries ==========="
 sudo apt-get install -y nano vim
-sudo apt-get install -y bison libasound2-dev swig
-sudo ldconfig
+#sudo apt-get install -y bison libasound2-dev swig
+#sudo ldconfig
 
-echo "=================================================="
-echo "=================================================="
-echo "========== Getting the code for libsoc ==========="
-echo "=================================================="
-echo "=================================================="
+#echo "=================================================="
+#echo "=================================================="
+#echo "========== Getting the code for libsoc ==========="
+#echo "=================================================="
+#echo "=================================================="
 
-cd $NineSixBoardsLib_Loc
-git clone https://github.com/jackmitch/libsoc.git
-cd libsoc
-autoreconf -i
-./configure --enable-python=3 --enable-board="dragonboard410c"
-make
-sudo make install
-sudo ldconfig
+#cd $NineSixBoardsLib_Loc
+#git clone https://github.com/jackmitch/libsoc.git
+#cd libsoc
+#autoreconf -i
+#./configure --enable-python=3 --enable-board="dragonboard410c"
+#make
+#sudo make install
+#sudo ldconfig
 
-echo "========================================================"
-echo "========================================================"
-echo "========== Getting the code for 96BoardsGPIO ==========="
-echo "========================================================"
-echo "========================================================"
-cd $NineSixBoardsLib_Loc
-git clone https://github.com/roykang75/96BoardsGPIO.git
-cd 96BoardsGPIO
-./autogen.sh
-./configure
-make
-sudo make install
-sudo ldconfig
+#echo "========================================================"
+#echo "========================================================"
+#echo "========== Getting the code for 96BoardsGPIO ==========="
+#echo "========================================================"
+#echo "========================================================"
+#cd $NineSixBoardsLib_Loc
+#git clone https://github.com/roykang75/96BoardsGPIO.git
+#cd 96BoardsGPIO
+#./autogen.sh
+#./configure
+#make
+#sudo make install
+#sudo ldconfig
 
-echo "========== Getting the code for cmuSphinxbase ==========="
-cd $SphinxLib_Loc
-git clone https://github.com/roykang75/sphinxbase.git
-cd sphinxbase
-./autogen.sh
-#./configure --enable-fixed
-./configure --enable-fixed --without-lapack
-make
-sudo make install
+#echo "========== Getting the code for cmuSphinxbase ==========="
+#cd $SphinxLib_Loc
+#git clone https://github.com/roykang75/sphinxbase.git
+#cd sphinxbase
+#./autogen.sh
+#./configure --enable-fixed --without-lapack
+#make
+#sudo make install
 
-echo "========== Getting the code for cmuPocketSphin AiVA DB410c ==========="
-cd $SphinxLib_Loc
-git clone https://github.com/roykang75/pocketsphinx-AiVA-DB410c.git
+#echo "========== Getting the code for cmuPocketSphin AiVA DB410c ==========="
+#cd $SphinxLib_Loc
+#git clone https://github.com/roykang75/pocketsphinx-AiVA-DB410c.git
 
-cd pocketsphinx-AiVA-DB410c
-mkdir extlib
-cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.la ./extlib
-cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.so ./extlib
+#cd pocketsphinx-AiVA-DB410c
+#mkdir extlib
+#cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.la ./extlib
+#cp ../../96Boards/96BoardsGPIO/lib/.libs/lib96BoardsGPIO.so ./extlib
 
-cp ../../96Boards/libsoc/lib/.libs/libsoc.la ./extlib
-cp ../../96Boards/libsoc/lib/.libs/libsoc.so ./extlib
+#cp ../../96Boards/libsoc/lib/.libs/libsoc.la ./extlib
+#cp ../../96Boards/libsoc/lib/.libs/libsoc.so ./extlib
 
-./autogen.sh
-./configure
-make
-sudo make install
+#./autogen.sh
+#./configure
+#make
+#sudo make install
 
 cd $Origin
 
