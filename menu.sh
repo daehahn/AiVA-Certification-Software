@@ -132,7 +132,7 @@ if [ "$MenuNo" = "6" ]; then
 	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_hi_play.sh
 	else
-		source ./sound_hi_pla_db410.sh
+		source ./sound_hi_play_db410.sh
 	fi		
 fi
 if [ "$MenuNo" = "7" ]; then
