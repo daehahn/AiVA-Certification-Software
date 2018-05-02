@@ -23,19 +23,19 @@ get_platform() {
 get_platform
 PLATFORM=$result
 
-if [ "$PLATFORM" == "pi" ]
-then
-  source pi.sh
-elif [ "$PLATFORM" == "mingw64" ]
-then
-  source mingw.sh
-elif [ "$PLATFORM" == "db410c" ]
-then
-  source db410c.sh  
-else
-  echo "The installation script doesn't support current system. (System: $(uname -a))"
-  exit 1
-fi
+#if [ "$PLATFORM" == "pi" ]
+#then
+#  source pi.sh
+#elif [ "$PLATFORM" == "mingw64" ]
+#then
+#  source mingw.sh
+#elif [ "$PLATFORM" == "db410c" ]
+#then
+##  source db410c.sh  
+#else
+#  echo "The installation script doesn't support current system. (System: $(uname -a))"
+#  exit 1
+#fi
 
 #-------------------------------------------------------
 # Function to parse user's input.
@@ -93,28 +93,46 @@ echo "2. Run Google Assistant (Korean)"
 echo "3. Run Google Assistant (English)"
 echo "4. UART Communication"
 echo "5. Sound Pressure Test"
+echo "6. Sound Hi Message (Loop)"
+echo "7. Quit"
 echo ""
 echo "========================="
 
 while [[ -z $MenuNo ]] ; do
-    echo "Enter your ProductId:"
+    echo "Enter Menu NO:"
     read MenuNo
 #    export SDK_CONFIG_PRODUCT_ID
 done
 
 
 if [ "$MenuNo" = "1" ]; then
-	source run_google_assistant_ko.sh
+	source ./run_google_assistant_ko.sh
 fi
 if [ "$MenuNo" = "2" ]; then
-	source run_google_assistant_ko.sh
+	source ./run_google_assistant_ko.sh
 fi
 if [ "$MenuNo" = "3" ]; then
-	source run_google_assistant.sh
+	source ./run_google_assistant.sh
 fi
 if [ "$MenuNo" = "4" ]; then
 	python ./zigbee/client/pyserial_test.py
 fi
 if [ "$MenuNo" = "5" ]; then
-	source sound_pressure_play.sh
+	if [ "$PLATFORM" == "pi" ]
+		source ./sound_hi_play.sh
+	else
+		source ./sound_hi_pla_db410.sh
+	fi		
 fi
+if [ "$MenuNo" = "6" ]; then
+	source ./sound_pressure_play.sh
+	if [ "$PLATFORM" == "pi" ]
+		source ./sound_pressure_play.sh
+	else
+		source ./sound_pressure_play_db410.sh
+	fi			
+fi
+if [ "$MenuNo" = "7" ]; then
+	exit 1
+fi
+
