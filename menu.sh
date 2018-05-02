@@ -112,7 +112,7 @@ if [ "$MenuNo" = "1" ]; then
 fi
 if [ "$MenuNo" = "2" ]; then
 	python ./zigbee/loopback/pyserial_test.py &
-	if [ "$PLATFORM" == "pi" ]
+	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_hi_play.sh
 	else
 		source ./sound_hi_pla_db410.sh
@@ -128,7 +128,7 @@ if [ "$MenuNo" = "5" ]; then
 	python ./zigbee/client/pyserial_test.py
 fi
 if [ "$MenuNo" = "6" ]; then
-	if [ "$PLATFORM" == "pi" ]
+	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_hi_play.sh
 	else
 		source ./sound_hi_pla_db410.sh
@@ -136,7 +136,7 @@ if [ "$MenuNo" = "6" ]; then
 fi
 if [ "$MenuNo" = "7" ]; then
 	source ./sound_pressure_play.sh
-	if [ "$PLATFORM" == "pi" ]
+	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_pressure_play.sh
 	else
 		source ./sound_pressure_play_db410.sh
