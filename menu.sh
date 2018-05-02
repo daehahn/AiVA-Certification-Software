@@ -23,6 +23,7 @@ get_platform() {
 get_platform
 PLATFORM=$result
 
+
 #if [ "$PLATFORM" == "pi" ]
 #then
 #  source pi.sh
