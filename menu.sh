@@ -129,6 +129,7 @@ if [ "$MenuNo" = "5" ]; then
 	python ./zigbee/client/pyserial_test.py
 fi
 if [ "$MenuNo" = "6" ]; then
+	echo "Sound Pressure Test"
 	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_pressure_play.sh
 	else
@@ -136,7 +137,7 @@ if [ "$MenuNo" = "6" ]; then
 	fi		
 fi
 if [ "$MenuNo" = "7" ]; then
-	source ./sound_pressure_play.sh
+	echo "Sound Hi Message (Loop)"
 	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_hi_play.sh
 	else
