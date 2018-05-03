@@ -11,6 +11,10 @@ $ chmod +x automated_install.sh
 $ ./automated_install.sh
 ```
 
+설치가 완료된 후, console을 실행하면 아래와 같은 화면이 나타납니다.
+![](/assert/test_menu.png)
+
+
 ### 수동 실행
 1. run_google_assistant.sh  
 : Google Assistant를 영어 모드로 실행합니다.  
