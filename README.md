@@ -4,15 +4,15 @@
 
 ---
 ### 설치
-	```
-	$ git clone https://github.com/roykang75/AiVA-Cert-SW.git
-	$ cd AiVA-Cert-SW
-	$ chmod +x automated_install.sh
-	$ ./automated_install.sh
-	```
+```
+$ git clone https://github.com/roykang75/AiVA-Cert-SW.git
+$ cd AiVA-Cert-SW
+$ chmod +x automated_install.sh
+$ ./automated_install.sh
+```
 
-	설치가 완료된 후, console을 실행하면 아래와 같은 화면이 나타납니다.
-	![](/assert/test_menu.png)
+* 설치가 완료된 후, console을 실행하면 아래와 같은 화면이 나타납니다.
+![](/assert/test_menu.png)
 
 
 ### 수동 실행
