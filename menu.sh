@@ -2,6 +2,7 @@
 #!/bin/bash
 
 clear
+cd /home/linaro/workspace/AiVA-Cert-SW
 
 get_platform() {
   uname_str=`uname -a`
