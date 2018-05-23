@@ -1,6 +1,8 @@
 
 #!/bin/bash
 
+sudo cpufreq-set -f 200 MHz
+
 clear
 cd /home/linaro/workspace/AiVA-Cert-SW
 
