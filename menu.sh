@@ -117,11 +117,11 @@ if [ "$MenuNo" = "1" ]; then
 fi
 if [ "$MenuNo" = "2" ]; then
 	python ./zigbee/loopback/pyserial_test.py &
-	if [ "$PLATFORM" == "pi" ]; then
-		source ./sound_hi_play.sh
-	else
-		source ./sound_hi_pla_db410.sh
-	fi	
+#	if [ "$PLATFORM" == "pi" ]; then
+#		source ./sound_hi_play.sh
+#	else
+#		source ./sound_hi_pla_db410.sh
+#	fi	
 fi
 if [ "$MenuNo" = "3" ]; then
 	source ./run_google_assistant_ko.sh
