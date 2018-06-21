@@ -122,8 +122,10 @@ python -m pip install grpcio grpcio-tools
 python -m pip install --upgrade google-assistant-sdk[samples]
 
 echo "regist device model"
-googlesamples-assistant-devicetool register-model --manufacturer "Assistant SDK developer" --product-name "Assistant SDK light" --type LIGHT --model roy-model
-googlesamples-assistant-devicetool list --model
+echo "googlesamples-assistant-devicetool --project-id lofty-ivy-192309 register-model --manufacturer 'Assistant SDK developer' --product-name 'Assistant SDK light' --type LIGHT --model roy-model"
+googlesamples-assistant-devicetool --project-id lofty-ivy-192309 register-model --manufacturer "Assistant SDK developer" --product-name "Assistant SDK light" --type LIGHT --model roy-model
+echo "googlesamples-assistant-devicetool --project-id lofty-ivy-192309 list --model"
+googlesamples-assistant-devicetool --project-id lofty-ivy-192309 list --model
 git clone https://github.com/googlesamples/assistant-sdk-python
 cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
 
@@ -139,6 +141,6 @@ echo '*****************************'
 echo '============================='
 echo ""
 
-#cd new-project
-#echo "run Google Assistant"
-#python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
+cd new-project
+echo "run Google Assistant"
+python -m pushtotalk --device-model-id roy-model --project-id lofty-ivy-192309
