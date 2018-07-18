@@ -94,12 +94,10 @@ echo "====== Select Menu ======"
 echo ""
 echo "1. AiVA Full Test"
 echo "2. Buddy Setup"
-echo "3. Run Google Assistant (Korean)"
-echo "4. Run Google Assistant (English)"
-echo "5. UART Communication"
-echo "6. Sound Pressure Test"
-echo "7. Sound Hi Message (Loop)"
-echo "8. Quit"
+echo "3. Run 30sec speech & replay (loop)"
+echo "4. UART Communication"
+echo "5. Sound Pressure Test"
+echo "6. Quit"
 echo ""
 echo "========================="
 
@@ -117,22 +115,14 @@ if [ "$MenuNo" = "1" ]; then
 fi
 if [ "$MenuNo" = "2" ]; then
 	python ./zigbee/loopback/pyserial_test.py &
-#	if [ "$PLATFORM" == "pi" ]; then
-#		source ./sound_hi_play.sh
-#	else
-#		source ./sound_hi_pla_db410.sh
-#	fi	
 fi
 if [ "$MenuNo" = "3" ]; then
-	source ./run_google_assistant_ko.sh
+  source ./sound_30s_speech.sh
 fi
 if [ "$MenuNo" = "4" ]; then
-	source ./run_google_assistant.sh
-fi
-if [ "$MenuNo" = "5" ]; then
 	python ./zigbee/client/pyserial_test.py
 fi
-if [ "$MenuNo" = "6" ]; then
+if [ "$MenuNo" = "5" ]; then
 	echo "Sound Pressure Test"
 	if [ "$PLATFORM" == "pi" ]; then
 		source ./sound_pressure_play.sh
@@ -140,15 +130,7 @@ if [ "$MenuNo" = "6" ]; then
 		source ./sound_pressure_play_db410.sh
 	fi		
 fi
-if [ "$MenuNo" = "7" ]; then
-	echo "Sound Hi Message (Loop)"
-	if [ "$PLATFORM" == "pi" ]; then
-		source ./sound_hi_play.sh
-	else
-		source ./sound_hi_play_db410.sh
-	fi			
-fi
-if [ "$MenuNo" = "8" ]; then
+if [ "$MenuNo" = "6" ]; then
 	exit 1
 fi
 
