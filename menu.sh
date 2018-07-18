@@ -4,7 +4,7 @@
 sudo cpufreq-set -f 200 MHz
 
 clear
-cd /home/linaro/workspace/AiVA-Cert-SW
+cd /home/linaro/AiVA-Cert-SW
 
 get_platform() {
   uname_str=`uname -a`
