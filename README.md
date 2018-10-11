@@ -4,10 +4,10 @@
 
 ---
 ### 설치
-1. DragnBoard 410c보드에 Debian 17.09 (Stretch)를 설치합니다.
+1. DragnBoard 410c보드에 Debian 17.09 (Stretch)를 설치합니다.  
    [Debian 17.09](http://releases.linaro.org/96boards/dragonboard410c/linaro/debian/17.09/dragonboard410c_sdcard_install_debian-283.zip)
 
-* 다음 명령들을 순차적으로 실행하면 인증용 소프트웨어가 설치됩니다. (약 2~3시간 소료됩니다.)
+* 다음 명령들을 순차적으로 실행하면 인증용 소프트웨어가 설치됩니다.
 ```
 $ git clone https://github.com/roykang75/AiVA-Cert-SW.git
 $ cd AiVA-Cert-SW
